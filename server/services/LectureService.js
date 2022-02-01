@@ -1,4 +1,4 @@
-const Lecture = require("../model/Lecture");
+const Lecture = require("../models/Lecture");
 
 
 module.exports.getAllLectures=() => {

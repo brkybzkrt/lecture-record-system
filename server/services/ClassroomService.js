@@ -1,4 +1,4 @@
-const Classroom = require("../model/Classroom");
+const Classroom = require("../models/Classroom");
 
 
 module.exports.getAllClassrooms=() => {

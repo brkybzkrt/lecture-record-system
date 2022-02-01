@@ -1,4 +1,4 @@
-const FacultyMember = require("../model/FacultyMember");
+const FacultyMember = require("../models/FacultyMember");
 
 
 module.exports.getAllFacultyMembers=() => {
