@@ -7,6 +7,11 @@ module.exports.getAllStudents=() => {
 
 }
 
+module.exports.getStudent=(id) => {
+
+    return Student.findById(id);
+
+}
 
 module.exports.insertStudent=(data) => {
 

@@ -1,4 +1,4 @@
-const {getAllStudents, insertStudent, deleteStudent,updateStudent} = require('../services/StudentService');
+const {getAllStudents, insertStudent, deleteStudent,updateStudent, getStudent} = require('../services/StudentService');
 
 
 
@@ -14,6 +14,22 @@ module.exports.getStudents=async(req,res) =>{
    })
 }
 
+module.exports.getOneStudent=async(req,res) =>{
+
+   try {
+      const {id}= req.params;
+
+      const value =await getStudent(id);
+
+      if(!value){
+         res.status(404).send('There is no student like this')
+      }
+
+      res.status(200).send(value);
+   } catch (error) {
+      res.status(500).send(error.message);
+   }
+}
 
 
 

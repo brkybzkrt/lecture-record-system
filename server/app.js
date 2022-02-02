@@ -17,7 +17,7 @@ const port = process.env.APP_PORT || 4000;
 app.use("/lecture",lectureRouter);
 app.use("/student",studentRouter);
 app.use("/facultyMember",facultyMemberRouter);
-app.use("/classRoom",classroomRouter);
+app.use("/classroom",classroomRouter);
 app.use("/auth",authRouter);
 
 

@@ -14,6 +14,19 @@ module.exports.addAdmin = async(req,res) => {
     })
 }
 
+module.exports.logoutAdmin = async(req, res) => {
+
+    try {
+        const { refresh_token } = req.body;
+		if (!refresh_token) {
+			res.status(400).send("There is not token");
+		}
+
+        res.status(200).send("success");
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+}
 
 module.exports.loginAdmin= async(req,res) => {
 

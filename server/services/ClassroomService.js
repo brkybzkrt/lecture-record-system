@@ -7,6 +7,11 @@ module.exports.getAllClassrooms=() => {
 
 }
 
+module.exports.getClassroom=(id) => {
+
+    return Classroom.findById(id);
+
+}
 
 module.exports.insertClassroom=(data) => {
 

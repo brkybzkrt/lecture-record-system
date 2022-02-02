@@ -1,4 +1,4 @@
-const {getAllLectures, insertLecture, deleteLecture,updateLecture} = require('../services/LectureService');
+const {getAllLectures, insertLecture, deleteLecture,updateLecture, getLecture} = require('../services/LectureService');
 
 
 
@@ -14,7 +14,22 @@ module.exports.getLectures=async(req,res) =>{
    })
 }
 
+module.exports.getOneLecture=async(req,res) =>{
 
+   try {
+      const {id}= req.params;
+
+      const value =await getLecture(id);
+
+      if(!value){
+         res.status(404).send('There is no Lecture like this')
+      }
+
+      res.status(200).send(value);
+   } catch (error) {
+      res.status(500).send(error.message);
+   }
+}
 
 
 module.exports.addLecture=async(req,res) =>{

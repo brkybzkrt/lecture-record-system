@@ -7,6 +7,11 @@ module.exports.getAllLectures=() => {
 
 }
 
+module.exports.getLecture=(id) => {
+
+    return Lecture.findById(id);
+
+}
 
 module.exports.insertLecture=(data) => {
 

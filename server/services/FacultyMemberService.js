@@ -7,6 +7,11 @@ module.exports.getAllFacultyMembers=() => {
 
 }
 
+module.exports.getFacultyMember=(id) => {
+
+    return FacultyMember.findById(id);
+
+}
 
 module.exports.insertFacultyMember=(data) => {
 
