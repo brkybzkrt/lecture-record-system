@@ -1,4 +1,6 @@
+const { cryptedPassword, createAccessToken, createRefleshToken } = require('../helpers');
 const {getAllStudents, insertStudent, deleteStudent,updateStudent, getStudent} = require('../services/StudentService');
+
 
 
 
@@ -73,3 +75,33 @@ module.exports.addStudent=async(req,res) =>{
      
     })
  }
+
+
+ module.exports.loginStudent= async(req,res) => {
+
+   req.body.password=cryptedPassword(req.body.password);
+   
+   const input =req.body;
+
+   try {
+      
+
+       const student= await login({code:input.code});
+
+       if(!student){return res.status(404).send("The code was not found.")}
+
+       const isMatched= await student.password===input.password;
+
+       if(!isMatched){return res.status(401).send('code or password not correct')}
+
+       const currentUser =student.toObject()
+       delete currentUser.password;
+       
+       User={...currentUser,token:{access_token:createAccessToken(student),reflesh_token:createRefleshToken(student)}}
+
+       res.status(200).send(User)
+
+   } catch (error) {
+       res.status(500).send(error.message)
+   }
+}

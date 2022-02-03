@@ -3,7 +3,7 @@ const Classroom = require("../models/Classroom");
 
 module.exports.getAllClassrooms=() => {
 
-    return Classroom.find({});
+    return Classroom.find({parentcode:/[a-zA-Z0-9]+/});
 
 }
 

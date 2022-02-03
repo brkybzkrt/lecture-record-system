@@ -5,7 +5,7 @@ const db = require("./config/db");
 dotenv.config();
 const app = express();
 
-const {lectureRouter,studentRouter,facultyMemberRouter,classroomRouter,authRouter} = require('./routes')
+const {lectureRouter,studentRouter,facultyMemberRouter,classroomRouter,authRouter,lectureRecordRouter} = require('./routes')
 
 app.use(express.json());
 
@@ -19,6 +19,7 @@ app.use("/student",studentRouter);
 app.use("/facultyMember",facultyMemberRouter);
 app.use("/classroom",classroomRouter);
 app.use("/auth",authRouter);
+app.use("/lectureRecord",lectureRecordRouter);
 
 
 
