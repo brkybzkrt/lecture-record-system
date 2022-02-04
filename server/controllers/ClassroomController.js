@@ -1,10 +1,22 @@
-const {getAllClassrooms, insertClassroom, deleteClassroom,updateClassroom, getClassroom} = require('../services/ClassroomService');
+const {getAllClassrooms, insertClassroom, deleteClassroom,updateClassroom, getClassroom, getAllClassroomsWithParentCode} = require('../services/ClassroomService');
 
 
 
 module.exports.getClassrooms=async(req,res) =>{
 
    await getAllClassrooms().then(result=>{
+
+    res.status(200).send(result);
+   }).catch((err)=>{
+
+    res.status(500).send(err);
+    
+   })
+}
+
+module.exports.getClassroomsWithParent=async(req,res) =>{
+
+   await getAllClassroomsWithParentCode().then(result=>{
 
     res.status(200).send(result);
    }).catch((err)=>{
@@ -30,7 +42,6 @@ module.exports.getOneClassroom=async(req,res) =>{
       res.status(500).send(error.message);
    }
 }
-
 
 module.exports.addClassroom=async(req,res) =>{
 

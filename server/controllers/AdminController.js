@@ -28,6 +28,7 @@ module.exports.logoutAdmin = async(req, res) => {
     }
 }
 
+
 module.exports.loginAdmin= async(req,res) => {
 
     req.body.password=cryptedPassword(req.body.password);

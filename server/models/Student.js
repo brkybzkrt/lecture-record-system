@@ -4,7 +4,7 @@ const { cryptedPassword } = require('../helpers');
 const StudentModel= new Schema({
 
     code:{type:String,match:[/[0-9]{10}/gi]},
-    name:{type:String,match:[/[a-zA-Zğıöüşç]{2,50}/gi]},
+    name:{type:String,match:[/([a-zA-Zğıöüşç]{2,50})\ ?([a-zA-Zğıöüşç]{2,50})?/gi]},
     surname:{type:String,match:[/[a-zA-Zğıöüşç]{2,50}/gi]},
     password:{type:String,match:[/[a-zA-Z0-9ğıöüşç]{8,}/gi]},
     role:{type:String, default:"student"}

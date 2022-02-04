@@ -5,6 +5,11 @@ export const getClassrooms=()=> {
     return api().get('classroom/getAll');
 }
 
+export const getClassroomsWithParent=()=> {
+ 
+    return api().get('classroom/getAllWithParent');
+}
+
 
 export const getLectures=()=> {
  

@@ -13,6 +13,7 @@ module.exports.getLecture=(id) => {
 
 }
 
+
 module.exports.insertLecture=(data) => {
 
     const value = new Lecture(data);
@@ -30,4 +31,7 @@ module.exports.updateLecture=(id,data) => {
 }
 
 
+module.exports.findIsMandatory=(lectureId) => {
 
+    return Lecture.findOne({_id:lectureId}).select('ismandatory');
+}

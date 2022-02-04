@@ -15,6 +15,7 @@ module.exports.getFacultyMembers=async(req,res) =>{
    })
 }
 
+
 module.exports.getOneFacultyMember=async(req,res) =>{
 
    try {
@@ -31,7 +32,6 @@ module.exports.getOneFacultyMember=async(req,res) =>{
       res.status(500).send(error.message);
    }
 }
-
 
 module.exports.addFacultyMember=async(req,res) =>{
 

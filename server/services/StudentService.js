@@ -7,11 +7,13 @@ module.exports.getAllStudents=() => {
 
 }
 
+
 module.exports.getStudent=(id) => {
 
     return Student.findById(id);
 
 }
+
 
 module.exports.insertStudent=(data) => {
 
@@ -29,3 +31,15 @@ module.exports.updateStudent=(id,data) => {
     return Student.findByIdAndUpdate(id,data);
 }
 
+
+module.exports.login=(data)=>{
+
+    return Student.findOne(data);
+}
+
+
+module.exports.getMe=(id)=>{
+
+    
+    return Student.findById(id).select("-password");
+ }

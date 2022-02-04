@@ -1,6 +1,5 @@
 const { cryptedPassword, createAccessToken, createRefleshToken } = require('../helpers');
-const {getAllStudents, insertStudent, deleteStudent,updateStudent, getStudent} = require('../services/StudentService');
-
+const {getAllStudents, insertStudent, deleteStudent,updateStudent, getStudent, login, getMe} = require('../services/StudentService');
 
 
 
@@ -32,7 +31,6 @@ module.exports.getOneStudent=async(req,res) =>{
       res.status(500).send(error.message);
    }
 }
-
 
 
 module.exports.addStudent=async(req,res) =>{
@@ -77,6 +75,7 @@ module.exports.addStudent=async(req,res) =>{
  }
 
 
+
  module.exports.loginStudent= async(req,res) => {
 
    req.body.password=cryptedPassword(req.body.password);
@@ -105,3 +104,15 @@ module.exports.addStudent=async(req,res) =>{
        res.status(500).send(error.message)
    }
 }
+
+module.exports.meStudent = async (req, res, next) => {
+	const { _doc} = req.user;
+
+	try {
+		const user = await getMe(_doc._id);
+
+		res.status(200).json(user);
+	} catch (e) {
+		next(e);
+	}
+};

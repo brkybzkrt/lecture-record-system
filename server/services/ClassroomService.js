@@ -13,6 +13,11 @@ module.exports.getClassroom=(id) => {
 
 }
 
+module.exports.getAllClassroomsWithParentCode=()=>{
+
+    return Classroom.find({});
+}
+
 module.exports.insertClassroom=(data) => {
 
     const value = new Classroom(data);

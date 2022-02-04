@@ -6,12 +6,12 @@ module.exports.getAllFacultyMembers=() => {
    return FacultyMember.find();
 
 }
-
 module.exports.getFacultyMember=(id) => {
 
     return FacultyMember.findById(id);
 
 }
+
 
 module.exports.insertFacultyMember=(data) => {
 

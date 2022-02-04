@@ -11,12 +11,19 @@ export const loginAdmin=(data)=> {
     return api().post('auth/login',data);
 }
 
-export const me=()=> {
+export const meAdmin=()=> {
  
     return api().get('auth/me',{
         headers:{Authorization: 'Bearer ' + localStorage.getItem('access_token')}
     })
 }
+export const meStudent=()=> {
+ 
+    return api().get('auth/meStudent',{
+        headers:{Authorization: 'Bearer ' + localStorage.getItem('access_token')}
+    })
+}
+
 
 
 
