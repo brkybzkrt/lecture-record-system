@@ -1,23 +1,24 @@
 import {createContext,useContext,useState,useEffect} from "react"
-import { meStudent } from "../services/authRequests";
+import { meAdmin } from "../services/authRequests";
 
-const UserContext = createContext();
+const AdminContext = createContext();
 
-const UserProvider=({children})=>{
-    const [user, setUser] = useState({role:""});
+const AdminProvider=({children})=>{
 
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [admin, setAdmin] = useState({role:""});
+    const [adminLoggedIn, setAdminLoggedIn] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [countOfLectures,setCountOfLectures]=useState(0);
+  
 
     useEffect(() => {
         
         (async () => {
             try {
-      
-                const {data} = await meStudent()
-                await setUser(data);
-                setLoggedIn(true);
+                const {data} = await meAdmin();
+              
+                await setAdmin(data);
+               
+                setAdminLoggedIn(true);
                 setLoading(false);
             } catch (e) {
                 setLoading(false);
@@ -26,8 +27,6 @@ const UserProvider=({children})=>{
         })()
 
         
-    
-
 
 
     },[]);
@@ -37,16 +36,16 @@ const UserProvider=({children})=>{
 
     const login = (data)=>{
         const {token,...leftData}=data;
-        setUser(leftData);
-        setLoggedIn(true);
+        setAdmin(leftData);
+        setAdminLoggedIn(true);
         localStorage.setItem('access_token', token.access_token);
         localStorage.setItem('reflesh_token', token.reflesh_token);
 
     }
 
     const logout = ()=>{
-        setLoggedIn(false);
-        setUser(null);
+        setAdminLoggedIn(false);
+        setAdmin(null);
     }
 
    
@@ -57,7 +56,7 @@ const UserProvider=({children})=>{
 
 
     const values={
-        user,login,loggedIn,logout,countOfLectures,setCountOfLectures
+        admin,login,adminLoggedIn,logout
     }
 
     if(loading){
@@ -69,8 +68,8 @@ const UserProvider=({children})=>{
         )
 
     }
-    return <UserContext.Provider value={values}>{children}</UserContext.Provider>
+    return <AdminContext.Provider value={values}>{children}</AdminContext.Provider>
 }
-const useUser=()=>useContext(UserContext)
+const useAdmin=()=>useContext(AdminContext)
 
-export {useUser,UserProvider};
+export {useAdmin,AdminProvider};
