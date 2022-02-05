@@ -16,12 +16,12 @@ module.exports.getLecturesCountOfStudentByIsMandatory=()=>{
 }
 
 
-module.exports.oll1=(studentId)=>{
+module.exports.getCountOfTypeMandatoryLecture=(studentId)=>{
 
     return LectureRecord.find({studentcode:studentId,lecturetype:'1'}).count();
 }
 
-module.exports.oll0=(studentId)=>{
+module.exports.getCountOfTypeOptionLecture=(studentId)=>{
 
     return LectureRecord.find({studentcode:studentId,lecturetype:'0'}).count();
 }

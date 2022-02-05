@@ -77,7 +77,7 @@ console.log(classrooms,lectures);
 <select name="facultymembercode" className="form-control" value={values.facultymembercode} onChange={handleChange}>
 <option >Choose a Faculty Member</option>
   {facMembers.map(f=>(
-     <option key={f._id} value={f._id}>{f.name}</option>)
+     <option key={f._id} value={f._id}>{f.name+" "+ f.surname}</option>)
 
   )}</select>
   <br/>
