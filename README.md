@@ -31,3 +31,75 @@ npm i && npm start
 # client
 npm i && npm start
 ```
+
+
+- Admin Login Sayfası
+
+  <img src="./img/admin-login.png" alt="admin-login" width="100%" height="50%"  style="margin:10px">
+
+```Bash
+# admin login için 
+Email => admin1@gmail.com
+Password => admin123
+```
+
+- Student Login Sayfası
+
+  <img src="./img/student-login.png" alt="admin-login" width="100%" height="50%"  style="margin:10px">
+
+```Bash
+# student login için 
+Student Code => 2021000030 (veya admin olarak giriş yaptıktan sonra bir öğrenci ekleyerek login olabilirsiniz)
+Password => 12345678
+```
+
+
+- Öğrenci Ana Sayfası
+
+  <img src="./img/student-main.png" alt="student-main" width="100%" height="50%"  style="margin:10px">
+
+
+- Öğrenci 5 ders seçimi sonrası
+
+  <img src="./img/student-main1.png" alt="student-main1" width="100%" height="50%"  style="margin:10px">
+
+
+- Öğrenci Aynı dersi almaya çalıştığında ki hata ekranı
+
+  <img src="./img/student-error.png" alt="student-error" width="100%" height="50%"  style="margin:10px">
+
+
+- Öğrenci zorunlu derslerden 3 taneden fazla almaya çalıştığında ki hata ekranı
+
+  <img src="./img/student-error1.png" alt="student-error1" width="100%" height="50%"  style="margin:10px">
+
+
+
+- Öğrenci seçmeli derslerden 2 taneden fazla almaya çalıştığında ki hata ekranı
+
+  <img src="./img/student-error2.png" alt="student-error2" width="100%" height="50%"  style="margin:10px">
+
+
+
+- Admin ana sayfa
+
+  <img src="./img/admin-main.png" alt="admin-main" width="100%" height="50%"  style="margin:10px">
+
+
+- Admin Ders sayfası
+
+  <img src="./img/admin-lecture.png" alt="admin-lecture" width="100%" height="50%"  style="margin:10px">
+
+- Admin Öğretim Görevlisi sayfası
+
+  <img src="./img/admin-facultyMember.png" alt="admin-facultyMember" width="100%" height="50%"  style="margin:10px">
+
+
+- Admin Sınıf sayfası
+
+  <img src="./img/admin-classroom.png" alt="admin-classroom" width="100%" height="50%"  style="margin:10px">
+
+
+- Admin Öğrenci sayfası
+
+  <img src="./img/admin-student.png" alt="admin-student" width="100%" height="50%"  style="margin:10px">
