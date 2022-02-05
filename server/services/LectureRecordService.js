@@ -2,7 +2,7 @@ const LectureRecord = require('../models/LectureRecord')
 
 module.exports.getLecturesOfStudent=(studentId)=>{
 
-    return LectureRecord.find({studentcode:studentId}).populate('classroomcode','name code').populate('facultymembercode','name code').populate('studentcode','name lastname code').populate('lecturecode','name code');
+    return LectureRecord.find({studentcode:studentId}).populate('classroomcode','name code').populate('facultymembercode','name surname code').populate('studentcode','name lastname code').populate('lecturecode','name code');
 }
 
 module.exports.getLecturesCountOfStudent=(studentId)=>{

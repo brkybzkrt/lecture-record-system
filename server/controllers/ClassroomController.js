@@ -1,4 +1,4 @@
-const {getAllClassrooms, insertClassroom, deleteClassroom,updateClassroom, getClassroom, getAllClassroomsWithParentCode} = require('../services/ClassroomService');
+const {getAllClassrooms, insertClassroom, deleteClassroom,updateClassroom, getClassroom, getAllClassroomsWithParentCode, getClassroomByCode} = require('../services/ClassroomService');
 
 
 
@@ -45,15 +45,20 @@ module.exports.getOneClassroom=async(req,res) =>{
 
 module.exports.addClassroom=async(req,res) =>{
 
-    
-    await insertClassroom(req.body).then(result=>{
- 
-     res.status(201).send(result);
-    }).catch((err)=>{
- 
-     res.status(500).send(err);
-     
-    })
+    try {
+       const {code}= req.body;
+      const isExists= await getClassroomByCode(code)
+
+      if(isExists){
+         return res.status(400).send('There is a classroom like this')
+        }
+
+        const response=await insertClassroom(req.body);
+        res.status(201).send(response);
+    } catch (error) {
+      res.status(500).send(err);
+    }
+
  }
 
 

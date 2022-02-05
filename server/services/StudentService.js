@@ -13,6 +13,11 @@ module.exports.getStudent=(id) => {
     return Student.findById(id);
 
 }
+module.exports.getStudentByCode=(code) => {
+
+    return Student.findOne({code});
+
+}
 
 
 module.exports.insertStudent=(data) => {

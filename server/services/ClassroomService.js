@@ -7,16 +7,25 @@ module.exports.getAllClassrooms=() => {
 
 }
 
+module.exports.getAllClassroomsWithParentCode=()=>{
+
+    return Classroom.find({});
+}
+
 module.exports.getClassroom=(id) => {
 
     return Classroom.findById(id);
 
 }
 
-module.exports.getAllClassroomsWithParentCode=()=>{
+module.exports.getClassroomByCode=(code) => {
 
-    return Classroom.find({});
+    return Classroom.findOne({code});
+
 }
+
+
+
 
 module.exports.insertClassroom=(data) => {
 

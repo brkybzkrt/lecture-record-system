@@ -3,7 +3,7 @@ const { cryptedPassword } = require('../helpers');
 
 const StudentModel= new Schema({
 
-    code:{type:String,match:[/[0-9]{10}/gi]},
+    code:{type:String,match:[/[0-9]{10}/gi],unique:true},
     name:{type:String,match:[/([a-zA-Zğıöüşç]{2,50})\ ?([a-zA-Zğıöüşç]{2,50})?/gi]},
     surname:{type:String,match:[/[a-zA-Zğıöüşç]{2,50}/gi]},
     password:{type:String,match:[/[a-zA-Z0-9ğıöüşç]{8,}/gi]},

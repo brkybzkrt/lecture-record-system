@@ -1,4 +1,4 @@
-const {getAllFacultyMembers, insertFacultyMember, deleteFacultyMember,updateFacultyMember, getFacultyMember} = require('../services/FacultyMemberService');
+const {getAllFacultyMembers, insertFacultyMember, deleteFacultyMember,updateFacultyMember, getFacultyMember, getFacultyMemberByCode} = require('../services/FacultyMemberService');
 
 
 
@@ -35,16 +35,24 @@ module.exports.getOneFacultyMember=async(req,res) =>{
 
 module.exports.addFacultyMember=async(req,res) =>{
 
+
+   try {
+         const {code}= req.body;
+        const isExists= await getFacultyMemberByCode(code)
+  
+        if(isExists){
+           return res.status(400).send('There is a faculty member like this')
+          }
+  
+          const response=await insertFacultyMember(req.body);
+          res.status(201).send(response);
+   } catch (error) {
+        res.status(500).send(err);
+   }
+  
+}
     
-    await insertFacultyMember(req.body).then(result=>{
  
-     res.status(201).send(result);
-    }).catch((err)=>{
- 
-     res.status(500).send(err);
-     
-    })
- }
 
 
  module.exports.removeFacultyMember= async(req,res) =>{

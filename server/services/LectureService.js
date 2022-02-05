@@ -13,6 +13,11 @@ module.exports.getLecture=(id) => {
 
 }
 
+module.exports.getLectureByCode=(code) => {
+
+    return Lecture.findOne({code});
+
+}
 
 module.exports.insertLecture=(data) => {
 

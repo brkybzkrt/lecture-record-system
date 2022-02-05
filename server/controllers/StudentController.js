@@ -1,5 +1,5 @@
 const { cryptedPassword, createAccessToken, createRefleshToken } = require('../helpers');
-const {getAllStudents, insertStudent, deleteStudent,updateStudent, getStudent, login, getMe} = require('../services/StudentService');
+const {getAllStudents, insertStudent, deleteStudent,updateStudent, getStudent, login, getMe, getStudentByCode} = require('../services/StudentService');
 
 
 
@@ -35,15 +35,21 @@ module.exports.getOneStudent=async(req,res) =>{
 
 module.exports.addStudent=async(req,res) =>{
 
-    
-    await insertStudent(req.body).then(result=>{
+    try {
+      const {code}= req.body;
+     const isExists= await getStudentByCode(code);
+
+     if(isExists){
+      return res.status(400).send('There is a student like this')
+     }
+
+     const response= await insertStudent(req.body);
+
+     res.status(201).send(response);
+    } catch (error) {
+      res.status(500).send(error);
+    }
  
-     res.status(201).send(result);
-    }).catch((err)=>{
- 
-     res.status(500).send(err);
-     
-    })
  }
 
 

@@ -12,6 +12,11 @@ module.exports.getFacultyMember=(id) => {
 
 }
 
+module.exports.getFacultyMemberByCode=(code) => {
+
+    return FacultyMember.findOne({code});
+
+}
 
 module.exports.insertFacultyMember=(data) => {
 
