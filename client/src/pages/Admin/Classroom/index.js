@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from "../../../components/Navbar"
 import { deleteClassroom } from '../../../services/deleteRequests';
-import { getClassrooms, getClassroomsWithParent } from '../../../services/getRequests';
+import { getClassroomsWithParent } from '../../../services/getRequests';
 
 function Classroom() {
 const [classrooms, setClassrooms] = useState([]);
@@ -15,7 +15,7 @@ const [classrooms, setClassrooms] = useState([]);
             
         }).catch(err => {console.log(err.response.data);})
       
-    },[]);
+    },[classrooms]);
   
 
 

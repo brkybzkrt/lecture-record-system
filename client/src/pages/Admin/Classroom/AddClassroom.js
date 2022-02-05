@@ -19,7 +19,7 @@ function AddClassroom() {
       
       history.push('/admin/classroom')
     } catch (e){
-      console.log(e.message);
+      alert(e.response.data);
     } 
   },
 });

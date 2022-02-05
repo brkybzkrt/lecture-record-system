@@ -17,19 +17,25 @@ function StudentMainPage() {
          alert(error.response.data);
       }
     }, []);
+
+
+    console.log(studentslectures);
   return (
     <>
   <Navbar/>
+  <h2 className="table text-center">Seçilmiş Dersler</h2>
   <table className="table">
 
   
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Öğretmen Kodu</th>
-      <th scope="col">Öğrenci kodu</th>
-      <th scope="col">Sınıf Kodu</th>
-      <th scope="col">Ders kodu</th>
+      <th scope="col">Faculty Member Code</th>
+      <th scope="col">Faculty Member Name</th>
+      <th scope="col">Student Code</th>
+      <th scope="col">Classroom Name</th>
+      <th scope="col">Lecture Code</th>
+      <th scope="col">Lecture Name</th>
     </tr>
   </thead>
   <tbody>
@@ -38,9 +44,11 @@ function StudentMainPage() {
       
         <tr key={sl._id}>
         <th scope="row">-</th>
-        <td>{sl.facultymembercode.name}</td>
+        <td>{sl.facultymembercode.code}</td>
+        <td>{sl.facultymembercode.name +" "+sl.facultymembercode.surname }</td>
         <td>{sl.studentcode.code}</td>
         <td>{sl.classroomcode.name}</td>
+        <td>{sl.lecturecode.code}</td>
         <td>{sl.lecturecode.name}</td>
        
           

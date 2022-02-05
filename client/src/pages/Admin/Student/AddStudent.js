@@ -16,8 +16,8 @@ function AddStudent() {
     try {
       await addStudent(values);
       history.push('/admin/student')
-    } catch (e){
-      console.log(e.message);
+    } catch (error){
+     alert(error.response.data);
     } 
   },
 });

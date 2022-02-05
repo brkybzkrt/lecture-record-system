@@ -18,7 +18,7 @@ function AddFacultyMember() {
       await addFacultyMember(values);
       history.push('/admin/facultyMember')
     } catch (e){
-      console.log(e.message);
+      alert(e.response.data);
     } 
   },
 });

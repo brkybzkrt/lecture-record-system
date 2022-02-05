@@ -20,7 +20,7 @@ function StudentNavbar() {
 
     {countOfLectures==5 ? <NavLink to="/student/lectureRecord" type="button" className="btn btn-primary disabled"> Ders Seçimi Ekranı</NavLink>:  <NavLink to="/student/lectureRecord" type="button" className="btn btn-primary "> Ders Seçimi Ekranı</NavLink>}
   
-    <Link onClick={()=>handlelogout()} type="button" className="btn btn-danger" >Logout</Link>
+    <Link onClick={()=>handlelogout()} type="button" className="btn btn-danger" >Çıkış</Link>
    
   
   </div>

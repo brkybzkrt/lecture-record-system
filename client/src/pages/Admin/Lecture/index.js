@@ -14,7 +14,7 @@ function Lecture() {
       setlectures(value.data);
         }).catch(err => {console.log(err.message);})
       
-    },[]);
+    },[lectures]);
     
     
   const delLecture = (id) => {

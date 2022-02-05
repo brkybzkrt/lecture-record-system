@@ -22,7 +22,8 @@ const {logout} = useAdmin();
           <Link to="/admin/classroom" exact type="button" className="btn btn-primary">Sınıf
           </Link>
           <Link to="/admin/student" type="button" className="btn btn-primary">Öğrenci</Link>
-          <Link onClick={()=>handlelogout()} type="button" className="btn btn-danger">Logout</Link>
+          <Link to="/admin/main" type="button" className="btn btn-secondary">Admin Anasayfa</Link>
+          <Link onClick={()=>handlelogout()} type="button" className="btn btn-danger">Çıkış</Link>
         </div>
     </div>
     

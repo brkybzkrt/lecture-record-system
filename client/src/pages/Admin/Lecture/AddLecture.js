@@ -19,7 +19,7 @@ function AddLecture() {
         await addLecture(values);
         history.push('/admin/lecture')
       } catch (e){
-        console.log(e.message);
+        alert(e.response.data);
       } 
     },
   });
