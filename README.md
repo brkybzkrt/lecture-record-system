@@ -33,7 +33,7 @@ npm i && npm start
 ```
 
 
-- Admin Login Sayfası
+- Admin login sayfası
 
   <img src="./img/admin-login.png" alt="admin-login" width="100%" height="50%"  style="margin:10px">
 
@@ -43,7 +43,7 @@ Email => admin1@gmail.com
 Password => admin123
 ```
 
-- Student Login Sayfası
+- Student login sayfası
 
   <img src="./img/student-login.png" alt="admin-login" width="100%" height="50%"  style="margin:10px">
 
@@ -54,7 +54,7 @@ Password => 12345678
 ```
 
 
-- Öğrenci Ana Sayfası
+- Öğrenci ana sayfası
 
   <img src="./img/student-main.png" alt="student-main" width="100%" height="50%"  style="margin:10px">
 
@@ -64,7 +64,7 @@ Password => 12345678
   <img src="./img/student-main1.png" alt="student-main1" width="100%" height="50%"  style="margin:10px">
 
 
-- Öğrenci Aynı dersi almaya çalıştığında ki hata ekranı
+- Öğrenci aynı dersi almaya çalıştığında ki hata ekranı
 
   <img src="./img/student-error.png" alt="student-error" width="100%" height="50%"  style="margin:10px">
 
@@ -86,20 +86,24 @@ Password => 12345678
   <img src="./img/admin-main.png" alt="admin-main" width="100%" height="50%"  style="margin:10px">
 
 
-- Admin Ders sayfası
+- Admin ders sayfası
 
   <img src="./img/admin-lecture.png" alt="admin-lecture" width="100%" height="50%"  style="margin:10px">
 
-- Admin Öğretim Görevlisi sayfası
+- Admin öğretim görevlisi sayfası
 
   <img src="./img/admin-facultyMember.png" alt="admin-facultyMember" width="100%" height="50%"  style="margin:10px">
 
 
-- Admin Sınıf sayfası
+- Admin sınıf sayfası
 
   <img src="./img/admin-classroom.png" alt="admin-classroom" width="100%" height="50%"  style="margin:10px">
 
 
-- Admin Öğrenci sayfası
+- Admin öğrenci sayfası
 
   <img src="./img/admin-student.png" alt="admin-student" width="100%" height="50%"  style="margin:10px">
+
+- Admin öğrenci ekleme hata ekranı
+
+  <img src="./img/admin-student-add-error.png" alt="admin-student" width="100%" height="50%"  style="margin:10px">
